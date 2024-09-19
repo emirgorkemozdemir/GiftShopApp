@@ -219,6 +219,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Test\TestAdd.cshtml" />
     <Content Include="Views\Test\TestList.cshtml" />
+    <Content Include="Views\Test\TestUpdate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

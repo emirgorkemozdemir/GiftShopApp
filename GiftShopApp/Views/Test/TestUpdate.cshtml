@@ -1,0 +1,15 @@
+﻿@using GiftShopApp.Models
+@model TableProduct
+@{
+    ViewBag.Title = "TestUpdate";
+}
+
+<h2>TestUpdate</h2>
+
+@Html.BeginForm("TestUpdate", "Test",FormMethod.Post)
+{
+@Html.HiddenFor(m=>m.ProductID) 
+@Html.TextBoxFor(m=>m.ProductName)
+@Html.TextBoxFor(m=>m.ProductPrice)
+<input type="submit" value="Güncelle" />
+}

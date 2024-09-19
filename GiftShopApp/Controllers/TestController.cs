@@ -54,5 +54,25 @@ namespace GiftShopApp.Controllers
             db_file.SaveChanges();
             return RedirectToAction("TestList");
         }
+
+        [HttpGet]
+        public ActionResult TestUpdate(int pid)
+        {
+            // Başta güncelleme işlemi için ürünün sayfamıza yüklenmesi gerekiyor. Bu yüzden
+            // return View() ile ürünü sayfaya döndürdük.
+            TableProduct selected_product = db_file.TableProduct.Find(pid);
+            return View(selected_product);
+        }
+
+        [HttpPost]
+        public ActionResult TestUpdate(TableProduct sended_product)
+        {
+            var selected_product = db_file.TableProduct.Find(sended_product.ProductID);
+            selected_product.ProductName = sended_product.ProductName;
+            selected_product.ProductPrice = sended_product.ProductPrice;
+            db_file.SaveChanges();
+
+            return RedirectToAction("TestList");
+        }
     }
 }
