@@ -1,0 +1,17 @@
+﻿@using GiftShopApp.Models
+@model TableProduct
+
+@{
+    ViewBag.Title = "TestAdd";
+}
+
+<h2>TestAdd</h2>
+
+@Html.BeginForm("TestAdd", "Test", FormMethod.Post)
+{
+@Html.ValidationMessageFor(m => m.ProductName)
+@Html.TextBoxFor(m => m.ProductName)
+@Html.ValidationMessageFor(m => m.ProductPrice)
+@Html.TextBoxFor(m => m.ProductPrice)
+<input type="submit" value="Kaydet" />
+}

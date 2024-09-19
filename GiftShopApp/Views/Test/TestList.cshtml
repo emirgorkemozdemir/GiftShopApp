@@ -1,0 +1,36 @@
+﻿@using GiftShopApp.Models
+@model List<TableProduct>
+@{
+    ViewBag.Title = "TestList";
+}
+<head>
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+</head>
+
+<h2>TestList</h2>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Ürün ID</th>
+            <th>Ürün Adı</th>
+            <th>Ürün Fiyatı</th>
+            <th>Ürünü Sil</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductID</td>
+                <td>@item.ProductName</td>
+                <td>@item.ProductPrice</td>
+                <td><a href="@Url.Action("TestDelete","Test",new { pid = item.ProductID })">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
